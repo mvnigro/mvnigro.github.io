@@ -85,6 +85,11 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: inline-block;
+  width: 50%;
+  justify-content: center;
+  object-position: center;
+ 
   
 }
 .wrapper .follow:hover {
@@ -100,4 +105,14 @@ body {
 p {
   font-size: 18px;
   padding-top: 5px;
+}
+@media screen and (max-width:950px) {
+  .wrapper .follow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    object-position: center;
+  }
+  }
+
 }
