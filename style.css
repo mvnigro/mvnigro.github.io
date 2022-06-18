@@ -25,7 +25,7 @@ html, body {
 }
 
 body {
-  background: linear-gradient(to right, #FFF9F0, #f8d298);
+  background: linear-gradient(to right, rgb(60, 60, 60), #000000);
 }
 
 .wrapper {
