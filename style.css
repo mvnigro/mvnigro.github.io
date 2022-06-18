@@ -109,7 +109,7 @@ p {
 }
 @media screen and (max-width:950px) {
   .wrapper .follow {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     width: 100%;
     object-position: center;
