@@ -25,13 +25,13 @@ html, body {
 }
 
 body {
-  background: linear-gradient(to right, #E75A7C, #141B41);
+  background: linear-gradient(to right, #FFF9F0, #f8d298);
 }
 
 .wrapper {
   max-width: 600px;
   position: relative;
-  background: linear-gradient(to left, #306BAC, #141B41);
+  background: linear-gradient(to left, #019d90, #015851);
   color: #fff;
   margin: 0 auto;
   padding: 30px;
