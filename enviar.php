@@ -1,47 +1,50 @@
 <?php
- // Adiciona o arquivo class.phpmailer.php - você deve especificar corretamente o caminho da pasta com o este arquivo.
- require_once("PHPMailer-master/src/PHPMailer.php");
- // Inicia a classe PHPMailer
- $mail = new PHPMailer();
- // DEFINIÇÃO DOS DADOS DE AUTENTICAÇÃO - Você deve alterar conforme o seu domínio!
- $mail->IsSMTP(); // Define que a mensagem será SMTP
- $mail->Host = "smtp.hostinger.com"; // Seu endereço de host SMTP
- $mail->SMTPAuth = true; // Define que será utilizada a autenticação -  Mantenha o valor "true"
- $mail->Port = 465; // Porta de comunicação SMTP - Mantenha o valor "587"
- $mail->SMTPSecure = false; // Define se é utilizado SSL/TLS - Mantenha o valor "false"
- $mail->SMTPAutoTLS = true; // Define se, por padrão, será utilizado TLS - Mantenha o valor "false"
- $mail->Username = 'vicente@vnigro.net'; // Conta de email existente e ativa em seu domínio
- $mail->Password = 'Vicente156@@$$'; // Senha da sua conta de email
- // DADOS DO REMETENTE
- $mail->Sender = "vicente@vnigro.net"; // Conta de email existente e ativa em seu domínio
- $mail->From = "vicente@vnigro.net"; // Sua conta de email que será remetente da mensagem
- $mail->FromName = "Form do site"; // Nome da conta de email
- // DADOS DO DESTINATÁRIO
- $mail->AddAddress('vicente@vnigro.net', 'Nome - Recebe1'); // Define qual conta de email receberá a mensagem
- //$mail->AddAddress('recebe2@dominio.com.br'); // Define qual conta de email receberá a mensagem
- //$mail->AddCC('copia@dominio.net'); // Define qual conta de email receberá uma cópia
- //$mail->AddBCC('copiaoculta@dominio.info'); // Define qual conta de email receberá uma cópia oculta
- // Definição de HTML/codificação
- $mail->IsHTML(true); // Define que o e-mail será enviado como HTML
- $mail->CharSet = 'utf-8'; // Charset da mensagem (opcional)
- // DEFINIÇÃO DA MENSAGEM
- $mail->Subject  = "Formulário de Contato"; // Assunto da mensagem
- $mail->Body .= " Nome: ".$_POST['companyName']."
-"; // Texto da mensagem
- $mail->Body .= " E-mail: ".$_POST['email']."
-"; // Texto da mensagem
- $mail->Body .= " Assunto: ".$_POST['product']."
-"; // Texto da mensagem
- $mail->Body .= " Mensagem: ".nl2br($_POST['price'])."
-"; // Texto da mensagem
- // ENVIO DO EMAIL
- $enviado = $mail->Send();
- // Limpa os destinatários e os anexos
- $mail->ClearAllRecipients();
- // Exibe uma mensagem de resultado do envio (sucesso/erro)
- if ($enviado) {
-   echo "E-mail enviado com sucesso!";
- } else {
-   echo "Não foi possível enviar o e-mail.";
-   echo "Detalhes do erro: " . $mail->ErrorInfo;
- }
+    $nome=$_POST['companyName'];
+    $telefone=$_POST['name'];
+    $email=$_POST['email'];
+    $mensagem= 'Esta mensagem foi enviada através do formulário<br><br>';
+    $mensagem.='<b>Nome: </b>'.$nome.'<br>';
+    $mensagem.='<b>Telefone:</b> '.$telefone.'<br>';
+    $mensagem.='<b>E-Mail:</b> '.$email.'<br>';
+    require("PHPMailer-master/src/PHPMailer.php");
+    require("PHPMailer-master/src/SMTP.php");
+    require ("PHPMailer-master/src/Exception.php");
+
+$mail = new PHPMailer\PHPMailer\PHPMailer();
+    $mail->isSMTP(); // Não modifique
+    $mail->SMTPDebug = 2;	
+    $mail->Host       = 'smtp.hostinger.com';  // SEU HOST (HOSPEDAGEM)
+    $mail->SMTPAuth   = true;                        // Manter em true
+    $mail->Username   = 'vicente@vnigro.net';   //SEU USUÁRIO DE EMAIL
+    $mail->Password   = 'Vicente156@@##';                   //SUA SENHA DO EMAIL SMTP password
+    $mail->SMTPSecure = 'tls';    //TLS OU SSL-VERIFICAR COM A HOSPEDAGEM
+    $mail->Port       = 587;     //TCP PORT, VERIFICAR COM A HOSPEDAGEM
+    $mail->CharSet = 'UTF-8';
+  
+    
+    //Recipients
+    $mail->setFrom('vicente@vnigro.net', 'Site');  //DEVE SER O MESMO EMAIL DO USERNAME
+    $mail->addAddress('mvnigro@gmail.com');     // QUAL EMAIL RECEBERÁ A MENSAGEM!
+    // $mail->addAddress('ellen@example.com');    // VOCÊ pode incluir quantos receptores quiser
+    $mail->addReplyTo($email, $nome);  //AQUI SERA O EMAIL PARA O QUAL SERA RESPONDIDO                  
+    // $mail->addCC('cc@example.com'); //ADICIONANDO CC
+    // $mail->addBCC('bcc@example.com'); //ADICIONANDO BCC
+
+    // Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Mensagem do Formulário'; //ASSUNTO
+    $mail->Body    = $mensagem;  //CORPO DA MENSAGEM
+    $mail->AltBody = $mensagem;  //CORPO DA MENSAGEM EM FORMA ALT
+
+    // $mail->send();
+    if(!$mail->Send()) {
+        echo "<script>alert('Erro ao enviar o E-Mail');window.location.assign('index.php');</script>";
+     }else{
+        echo "<script>alert('E-Mail enviado com sucesso!');window.location.assign('index.php');</script>";
+     }
+     die
+?>
