@@ -2,12 +2,12 @@
     $empresa=$_POST['companyName'];
     $nome=$_POST['name'];
     $email=$_POST['email'];
-    $email=$_POST['country'];
-    $email=$_POST['product'];
-    $email=$_POST['moq'];
-    $email=$_POST['etd'];
-    $email=$_POST['photo'];
-    $email=$_POST['price'];
+    $country=$_POST['country'];
+    $product=$_POST['product'];
+    $moq=$_POST['moq'];
+    $etd=$_POST['etd'];
+    $photo=$_POST['photo'];
+    $price=$_POST['price'];
  
 
     $mensagem= 'Esta mensagem foi enviada através do formulário<br><br>';
@@ -15,7 +15,7 @@
     $mensagem.='<b>Nome:</b> '.$nome.'<br>';
     $mensagem.='<b>E-Mail:</b> '.$email.'<br>';
     $mensagem.='<b>País:</b> '.$country.'<br>';
-    $mensagem2.='<b>Produto:</b> '.$product.'<br>';
+    $mensagem.='<b>Produto:</b> '.$product.'<br>';
     $mensagem.='<b>MOQ:</b> '.$moq.'<br>';
     $mensagem.='<b>ETD:</b> '.$etd.'<br>';
     $mensagem.='<b>Photo:</b> '.$photo.'<br>';
@@ -51,7 +51,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Mensagem do Formulário'; //ASSUNTO
-    $mail->Body    = $mensagem; $mensagem2;  //CORPO DA MENSAGEM
+    $mail->Body    = $mensagem;  //CORPO DA MENSAGEM
     $mail->AltBody = $mensagem;  //CORPO DA MENSAGEM EM FORMA ALT
 
     // $mail->send();
