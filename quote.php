@@ -49,14 +49,14 @@
             <div class="row mb-1">
                 <div class="col">
                     <label class="form-label">Product MOQ</label>
-                    <input type="text" name="subject" class="form-control" placeholder="Insert MOQ kg"
+                    <input type="text" name="moq" class="form-control" placeholder="Insert MOQ kg"
                         aria-label="Subject" required>
                 </div>
             </div>
             <div class="row mb-1">
                 <div class="col">
                     <label class="form-label">ETD</label>
-                    <input type="text" name="subject" class="form-control" placeholder="Estimated time to Delivery"
+                    <input type="text" name="etd" class="form-control" placeholder="Estimated time to Delivery"
                         aria-label="Subject" required>
                 </div>
             </div>
