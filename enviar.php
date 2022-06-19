@@ -56,7 +56,8 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
 
     // $mail->send();
     if(!$mail->Send()) {
-        echo "<script>alert('Erro ao enviar o E-Mail');window.location.assign('index.php');</script>";
+        //echo "<script>alert('Erro ao enviar o E-Mail');window.location.assign('index.php');</script>";
+        echo "erro";
      }else{
         echo "<script>alert('E-Mail enviado com sucesso!');window.location.assign('index.php');</script>";
      }
