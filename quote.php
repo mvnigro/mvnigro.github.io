@@ -43,35 +43,35 @@
                 <div class="col">
                     <label class="form-label">Product Name</label>
                     <input type="text" name="product" class="form-control" placeholder=""
-                        aria-label="Subject" required>
+                        aria-label="Product Name" required>
                 </div>
             </div>
             <div class="row mb-1">
                 <div class="col">
                     <label class="form-label">Product MOQ</label>
                     <input type="text" name="moq" class="form-control" placeholder="Insert MOQ kg"
-                        aria-label="Subject" required>
+                        aria-label="MOQ" required>
                 </div>
             </div>
             <div class="row mb-1">
                 <div class="col">
                     <label class="form-label">ETD</label>
                     <input type="text" name="etd" class="form-control" placeholder="Estimated time to Delivery"
-                        aria-label="Subject" required>
+                        aria-label="ETD" required>
                 </div>
             </div>
             <div class="row mb-1">
                 <div class="col">
                     <label class="form-label">Product Photo</label>
                     <input type="file" name="photo" class="form-control" placeholder="Photo"
-                        aria-label="Subject">
+                        aria-label="Photo">
                 </div>
             </div>
             <div class="row mb-1">
                 <div class="col">
                     <label class="form-label">FOB And CIF USD Price (Santos-Brazil) and Especifications</label>
                     <textarea type="text" name="price" class="form-control" placeholder=""
-                        aria-label="Message" style="height:auto;" required></textarea>
+                        aria-label="Price" style="height:auto;" required></textarea>
                 </div>
             </div>
             <button type="submit" name="action" value="send" class="btn btn-success mt-2">Submit</button>

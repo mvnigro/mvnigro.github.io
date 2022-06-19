@@ -3,6 +3,7 @@
     $nome=$_POST['name'];
     $email=$_POST['email'];
     $email=$_POST['country'];
+    $email=$_POST['product'];
     $email=$_POST['moq'];
     $email=$_POST['etd'];
     $email=$_POST['photo'];
@@ -14,6 +15,7 @@
     $mensagem.='<b>Nome:</b> '.$nome.'<br>';
     $mensagem.='<b>E-Mail:</b> '.$email.'<br>';
     $mensagem.='<b>País:</b> '.$country.'<br>';
+    $mensagem.='<b>Produto:</b> '.$product.'<br>';
     $mensagem.='<b>MOQ:</b> '.$moq.'<br>';
     $mensagem.='<b>ETD:</b> '.$etd.'<br>';
     $mensagem.='<b>Photo:</b> '.$photo.'<br>';
@@ -35,7 +37,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
   
     
     //Recipients
-    $mail->setFrom('vicente@vnigro.net', 'Site');  //DEVE SER O MESMO EMAIL DO USERNAME
+    $mail->setFrom('vicente@vnigro.net', 'Quote from Site');  //DEVE SER O MESMO EMAIL DO USERNAME
     $mail->addAddress('mvnigro@gmail.com');     // QUAL EMAIL RECEBERÁ A MENSAGEM!
     // $mail->addAddress('ellen@example.com');    // VOCÊ pode incluir quantos receptores quiser
     $mail->addReplyTo($email, $nome);  //AQUI SERA O EMAIL PARA O QUAL SERA RESPONDIDO                  
