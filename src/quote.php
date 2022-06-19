@@ -69,7 +69,7 @@
             </div>
             <div class="row mb-1">
                 <div class="col">
-                    <label class="form-label">FOB And CIF USD Price (Santos-Brazil) and Especifications</label>
+                    <label class="form-label">FOB and CIF USD Price (Santos-Brazil) and Especifications</label>
                     <textarea type="text" name="price" class="form-control" placeholder=""
                         aria-label="Price" style="height:auto;" required></textarea>
                 </div>
