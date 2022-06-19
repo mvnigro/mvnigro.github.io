@@ -11,7 +11,7 @@
 
     $mensagem= 'Esta mensagem foi enviada através do formulário<br><br>';
     $mensagem.='<b>Nome da Empresa: </b>'.$empresa.'<br>';
-    $mensagem.='<b>Nome:</b> '.$nome.'<br>';
+    $mensagem.='<b>Nome: </b> '.$nome.'<br>';
     $mensagem.='<b>E-Mail:</b> '.$email.'<br>';
     $mensagem.='<b>País:</b> '.$country.'<br>';
     $mensagem.='<b>Produto:</b> '.$product.'<br>';
@@ -27,8 +27,8 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->SMTPDebug = 2;	
     $mail->Host       = 'smtp.hostinger.com';  // SEU HOST (HOSPEDAGEM)
     $mail->SMTPAuth   = true;                        // Manter em true
-    $mail->Username   = '${{ secrets.USUARIO_EMAIL }}';   //SEU USUÁRIO DE EMAIL
-    $mail->Password   = '${{ secrets.USUARIO_EMAIL_SENHA }}';                   //SUA SENHA DO EMAIL SMTP password
+    $mail->Username   = 'env ${{ secrets.USUARIO_EMAIL }}';   //SEU USUÁRIO DE EMAIL
+    $mail->Password   = 'env ${{ secrets.USUARIO_EMAIL_SENHA }}';                   //SUA SENHA DO EMAIL SMTP password
     $mail->SMTPSecure = 'tls';    //TLS OU SSL-VERIFICAR COM A HOSPEDAGEM
     $mail->Port       = 587;     //TCP PORT, VERIFICAR COM A HOSPEDAGEM
     $mail->CharSet = 'UTF-8';

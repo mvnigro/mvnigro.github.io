@@ -15,8 +15,7 @@
             <img src="assets/img/user.png" alt="Vicente Nigro" />
             <h1 class="name">Vicente Nigro</h1>
             <p class="description">CEO | Comercial Elmar Ltda.</p><br/>
-           
-           
+                  
             <ul class="social-media">
                <a href="https://wa.me/5511987630455" target="_blank"><i class="bi bi-whatsapp" target="_blank"></i></a>
                <a href="mailto:import@comercialelmar.com.br" target="_blank"><i class="bi bi-envelope"></i></a>

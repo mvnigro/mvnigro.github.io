@@ -77,6 +77,7 @@
             <button type="submit" name="action" value="send" class="btn btn-success mt-2">Submit</button>
         </form><br/>
         <a href="index.html" class="follow"><i class="bi bi-arrow-left"></i></a>
+      
     </div>
    
 </body>
