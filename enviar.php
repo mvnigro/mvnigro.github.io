@@ -45,7 +45,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     // $mail->addBCC('bcc@example.com'); //ADICIONANDO BCC
 
     // Attachments
-    $mail->AddAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']);         // Add attachments
+    $mail->AddAttachment($_FILES['photo']['tmp_name'], $_FILES['photo']['name']);         // Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     // Content
