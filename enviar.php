@@ -36,7 +36,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     
     //Recipients
     $mail->setFrom('${{ secrets.USUARIO_EMAIL }}', 'Quote from Site');  //DEVE SER O MESMO EMAIL DO USERNAME
-    $mail->addAddress('mvnigro@gmail.com');     // QUAL EMAIL RECEBERÁ A MENSAGEM!
+    $mail->addAddress('${{ secrets.USUARIO_EMAIL }}');     // QUAL EMAIL RECEBERÁ A MENSAGEM!
     // $mail->addAddress('ellen@example.com');    // VOCÊ pode incluir quantos receptores quiser
     $mail->addReplyTo($email, $nome);  //AQUI SERA O EMAIL PARA O QUAL SERA RESPONDIDO                  
     // $mail->addCC('cc@example.com'); //ADICIONANDO CC
