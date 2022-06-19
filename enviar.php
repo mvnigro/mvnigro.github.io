@@ -1,11 +1,23 @@
 <?php
-    $nome=$_POST['companyName'];
-    $telefone=$_POST['name'];
+    $empresa=$_POST['companyName'];
+    $nome=$_POST['name'];
     $email=$_POST['email'];
+    $email=$_POST['country'];
+    $email=$_POST['moq'];
+    $email=$_POST['etd'];
+    $email=$_POST['photo'];
+    $email=$_POST['price'];
+ 
+
     $mensagem= 'Esta mensagem foi enviada através do formulário<br><br>';
-    $mensagem.='<b>Nome: </b>'.$nome.'<br>';
-    $mensagem.='<b>Telefone:</b> '.$telefone.'<br>';
+    $mensagem.='<b>Nome da Empresa: </b>'.$empresa.'<br>';
+    $mensagem.='<b>Nome:</b> '.$nome.'<br>';
     $mensagem.='<b>E-Mail:</b> '.$email.'<br>';
+    $mensagem.='<b>País:</b> '.$country.'<br>';
+    $mensagem.='<b>MOQ:</b> '.$moq.'<br>';
+    $mensagem.='<b>ETD:</b> '.$etd.'<br>';
+    $mensagem.='<b>Photo:</b> '.$photo.'<br>';
+    $mensagem.='<b>Preço:</b> '.$price.'<br>';
     require("PHPMailer-master/src/PHPMailer.php");
     require("PHPMailer-master/src/SMTP.php");
     require ("PHPMailer-master/src/Exception.php");
@@ -31,8 +43,8 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     // $mail->addBCC('bcc@example.com'); //ADICIONANDO BCC
 
     // Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
