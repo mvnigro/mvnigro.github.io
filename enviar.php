@@ -6,7 +6,7 @@
     $product=$_POST['product'];
     $moq=$_POST['moq'];
     $etd=$_POST['etd'];
-    $photo=$_POST['photo'];
+    $photo=$_FILES['photo'];
     $price=$_POST['price'];
  
 
@@ -45,7 +45,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     // $mail->addBCC('bcc@example.com'); //ADICIONANDO BCC
 
     // Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    $mail->AddAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']);         // Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     // Content
