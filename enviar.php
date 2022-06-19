@@ -6,7 +6,7 @@
     $product=$_POST['product'];
     $moq=$_POST['moq'];
     $etd=$_POST['etd'];
-    $photo=$_FILES['photo'];
+    $photo=$_POST['photo'];
     $price=$_POST['price'];
  
 
