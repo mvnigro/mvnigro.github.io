@@ -62,4 +62,4 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
         echo "<script>alert('E-Mail enviado com sucesso!');window.location.assign('index.php');</script>";
      }
      die
-?>
+?> 
